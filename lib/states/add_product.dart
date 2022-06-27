@@ -102,7 +102,7 @@ class _AddProductState extends State<AddProduct> {
         MyDialog().showProgressDialog(context);
 
         String apiSaveProduct =
-            '${MyConstant.domain}/shoppingmall/saveProduct.php';
+            '${MyConstant.domain}/shopapp/saveProduct.php';
         // print('### apiSaveProduct == $apiSaveProduct');
 
         int loop = 0;
@@ -134,7 +134,7 @@ class _AddProductState extends State<AddProduct> {
               print('### images ==> $images');
 
               String path =
-                  '${MyConstant.domain}/shoppingmall/insertProduct.php?isAdd=true&idSeller=$idSeller&nameSeller=$nameSeller&name=$name&price=$price&detail=$detail&images=$images';
+                  '${MyConstant.domain}/shopapp/insertProduct.php?isAdd=true&idSeller=$idSeller&nameSeller=$nameSeller&name=$name&price=$price&detail=$detail&images=$images';
 
               await Dio().get(path).then((value) => Navigator.pop(context));
 

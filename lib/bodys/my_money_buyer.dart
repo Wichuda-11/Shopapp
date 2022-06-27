@@ -58,7 +58,7 @@ class _MyMoneyBuyerState extends State<MyMoneyBuyer> {
     print('idBuyer ==> $idBuyer');
 
     var path =
-        '${MyConstant.domain}/shoppingmall/getWalletWhereIdBuyer.php?isAdd=true&idBuyer=$idBuyer';
+        '${MyConstant.domain}/shopapp/getWalletWhereIdBuyer.php?isAdd=true&idBuyer=$idBuyer';
     await Dio().get(path).then((value) {
       print('### value getWalletWhrerIdBuyer ==>> $value');
 

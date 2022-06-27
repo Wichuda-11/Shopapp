@@ -143,7 +143,7 @@ class _EditProductState extends State<EditProduct> {
             child: files[index] == null
                 ? CachedNetworkImage(
                     imageUrl:
-                        '${MyConstant.domain}/shoppingmall/${pathImages[index]}',
+                        '${MyConstant.domain}/shopapp/${pathImages[index]}',
                     placeholder: (context, url) => ShowProgress(),
                   )
                 : Image.file(files[index]!),
@@ -263,7 +263,7 @@ class _EditProductState extends State<EditProduct> {
             int i = Random().nextInt(1000000);
             String nameImage = 'productEdit$i.jpg';
             String apiUploadImage =
-                '${MyConstant.domain}/shoppingmall/saveProduct.php';
+                '${MyConstant.domain}/shopapp/saveProduct.php';
 
             Map<String, dynamic> map = {};
             map['file'] =
@@ -288,7 +288,7 @@ class _EditProductState extends State<EditProduct> {
       print('## images = $images');
 
       String apiEditProduct =
-          '${MyConstant.domain}/shoppingmall/editProductWhereId.php?isAdd=true&id=$id&name=$name&price=$price&detail=$detail&images=$images';
+          '${MyConstant.domain}/shopapp/editProductWhereId.php?isAdd=true&id=$id&name=$name&price=$price&detail=$detail&images=$images';
       await Dio().get(apiEditProduct).then((value) => Navigator.pop(context));
     }
   }

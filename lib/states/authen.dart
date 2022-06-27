@@ -94,7 +94,7 @@ class _AuthenState extends State<Authen> {
 
   Future<Null> checkAuthen({String? user, String? password}) async {
     String apiCheckAuthen =
-        '${MyConstant.domain}/shoppingmall/getUserWhereUser.php?isAdd=true&user=$user';
+        '${MyConstant.domain}/shopapp/getUserWhereUser.php?isAdd=true&user=$user';
     await Dio().get(apiCheckAuthen).then((value) async {
       print('## value for API ==>> $value');
       if (value.toString() == 'null') {

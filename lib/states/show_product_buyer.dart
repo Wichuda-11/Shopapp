@@ -56,7 +56,7 @@ class _ShowProductBuyerState extends State<ShowProductBuyer> {
 
   Future<void> readAPI() async {
     String urlAPI =
-        '${MyConstant.domain}/shoppingmall/getProductWhereIdSeller.php?isAdd=true&idSeller=${userModel!.id}';
+        '${MyConstant.domain}/shopapp/getProductWhereIdSeller.php?isAdd=true&idSeller=${userModel!.id}';
     await Dio().get(urlAPI).then(
       (value) {
         // print('### value = $value');
@@ -180,7 +180,7 @@ class _ShowProductBuyerState extends State<ShowProductBuyer> {
       strings[index] = item.trim();
       index++;
     }
-    String result = '${MyConstant.domain}/shoppingmall${strings[0]}';
+    String result = '${MyConstant.domain}/shopapp${strings[0]}';
     // print('### result = $result');
     return result;
   }
@@ -208,7 +208,7 @@ class _ShowProductBuyerState extends State<ShowProductBuyer> {
                     children: [
                       CachedNetworkImage(
                         imageUrl:
-                            '${MyConstant.domain}/shoppingmall${images[indexImage]}',
+                            '${MyConstant.domain}/shopapp${images[indexImage]}',
                         placeholder: (context, url) => ShowProgress(),
                       ),
                       Padding(

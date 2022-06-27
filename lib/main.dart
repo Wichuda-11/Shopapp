@@ -7,6 +7,11 @@ import 'package:shopapp/states/buyer_service.dart';
 import 'package:shopapp/states/saler_service.dart';
 import 'package:shopapp/states/rider_service.dart';
 
+
+void main() {
+  runApp( MyApp());
+}
+
 final Map<String, WidgetBuilder> map = {
   '/authen': (BuildContext context)=>Authen(),
   '/createAccount':(BuildContext context)=>CreateAccount(),
@@ -17,6 +22,7 @@ final Map<String, WidgetBuilder> map = {
 
 String? initlalRoute;
 
+
 class MyApp extends StatelessWidget {
   const MyApp ({Key? key}) : super(key: key);
   
@@ -25,8 +31,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: MyConstant.appName,
-      routes: map,
-      initialRoute: initialRoute,
+      initialRoute: '/authen',
+      routes: {
+        '/authen': (context) => const Authen(),
+        '/createAccount': (context) => const CreateAccount(),
+        '/buyerService' : (context) => const BuyerService(),
+        '/salerService' : (context) => const SalerService(),
+        '/riderService' : (context) => const RiderService(),
+      }
     );
   }
 }

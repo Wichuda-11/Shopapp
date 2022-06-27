@@ -38,7 +38,7 @@ class _ShowProductSellerState extends State<ShowProductSeller> {
     String id = preferences.getString('id')!;
 
     String apiGetProductWhereIdSeller =
-        '${MyConstant.domain}/shoppingmall/getProductWhereIdSeller.php?isAdd=true&idSeller=$id';
+        '${MyConstant.domain}/shopapp/getProductWhereIdSeller.php?isAdd=true&idSeller=$id';
     await Dio().get(apiGetProductWhereIdSeller).then((value) {
       // print('value ==> $value');
 
@@ -99,7 +99,7 @@ class _ShowProductSellerState extends State<ShowProductSeller> {
   String createUrl(String string) {
     String result = string.substring(1, string.length - 1);
     List<String> strings = result.split(',');
-    String url = '${MyConstant.domain}/shoppingmall${strings[0]}';
+    String url = '${MyConstant.domain}/shopapp${strings[0]}';
     return url;
   }
 
@@ -212,7 +212,7 @@ class _ShowProductSellerState extends State<ShowProductSeller> {
             onPressed: () async {
               print('## Confirm Delete at id ==> ${productModel.id}');
               String apiDeleteProductWhereId =
-                  '${MyConstant.domain}/shoppingmall/deleteProductWhereId.php?isAdd=true&id=${productModel.id}';
+                  '${MyConstant.domain}/shopapp/deleteProductWhereId.php?isAdd=true&id=${productModel.id}';
               await Dio().get(apiDeleteProductWhereId).then((value) {
                 Navigator.pop(context);
                 loadValueFromAPI();

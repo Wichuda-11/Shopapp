@@ -350,7 +350,7 @@ class _CreateAccountState extends State<CreateAccount> {
     print(
         '## name = $name, address = $address, phone = $phone, user = $user, password = $password');
     String path =
-        '${MyConstant.domain}/shoppingmall/getUserWhereUser.php?isAdd=true&user=$user';
+        '${MyConstant.domain}/shopapp/getUserWhereUser.php?isAdd=true&user=$user';
     await Dio().get(path).then((value) async {
       print('## value ==>> $value');
       if (value.toString() == 'null') {
@@ -369,7 +369,7 @@ class _CreateAccountState extends State<CreateAccount> {
           // Have Avatar
           print('### process Upload Avatar');
           String apiSaveAvatar =
-              '${MyConstant.domain}/shoppingmall/saveAvatar.php';
+              '${MyConstant.domain}/shopapp/saveAvatar.php';
           int i = Random().nextInt(100000);
           String nameAvatar = 'avatar$i.jpg';
           Map<String, dynamic> map = Map();
@@ -377,7 +377,7 @@ class _CreateAccountState extends State<CreateAccount> {
               await MultipartFile.fromFile(file!.path, filename: nameAvatar);
           FormData data = FormData.fromMap(map);
           await Dio().post(apiSaveAvatar, data: data).then((value) {
-            avatar = '/shoppingmall/avatar/$nameAvatar';
+            avatar = '/shopapp/avatar/$nameAvatar';
             processInsertMySQL(
               name: name,
               address: address,
@@ -401,7 +401,7 @@ class _CreateAccountState extends State<CreateAccount> {
       String? password}) async {
     print('### processInsertMySQL Work and avatar ==>> $avatar');
     String apiInsertUser =
-        '${MyConstant.domain}/shoppingmall/insertUser.php?isAdd=true&name=$name&type=$typeUser&address=$address&phone=$phone&user=$user&password=$password&avatar=$avatar&lat=$lat&lng=$lng';
+        '${MyConstant.domain}/shopapp/insertUser.php?isAdd=true&name=$name&type=$typeUser&address=$address&phone=$phone&user=$user&password=$password&avatar=$avatar&lat=$lat&lng=$lng';
     await Dio().get(apiInsertUser).then((value) {
       if (value.toString() == 'true') {
         Navigator.pop(context);

@@ -45,12 +45,12 @@ class _BankState extends State<Bank> {
               ),
             ),
             title: ShowTitle(
-              title: 'ธนาคารกรุงเทพ สาขาบิ๊คซี บางนา',
+              title: 'ธนาคารกสิกร',
               textStyle: MyConstant().h2Style(),
             ),
             subtitle: ShowTitle(
               title:
-                  'ชื่อบัญชี นายชัยวุฒิ พรหมบุตร เลขบัญชี  913 - 0 - 04149 - 5',
+                  'ชื่อบัญชี นางสาววิชุดา เลขบัญชี  000 - 0 - 00000 - 5',
               textStyle: MyConstant().h3Style(),
             ),
           ),
@@ -79,11 +79,11 @@ class _BankState extends State<Bank> {
               ),
             ),
             title: ShowTitle(
-              title: 'ธนาคารกสิกรไทย สาขาบางนา',
+              title: 'ธนาคารกรุงไทย',
               textStyle: MyConstant().h2Style(),
             ),
             subtitle: ShowTitle(
-              title: 'ชื่อบัญชี นายชัยวุฒิ พรหมบุตร เลขบัญชี  056 - 2 - 32767 - 5',
+              title: 'ชื่อบัญชี นางสาววิชุดา เลขบัญชี  000 - 2 - 00000 - 5',
               textStyle: MyConstant().h3Style(),
             ),
           ),

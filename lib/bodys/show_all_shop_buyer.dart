@@ -28,7 +28,7 @@ class _ShowAllShopBuyerState extends State<ShowAllShopBuyer> {
   }
 
   Future<Null> readApiAllShop() async {
-    String urlAPI = '${MyConstant.domain}/shoppingmall/getUserWhereSeller.php';
+    String urlAPI = '${MyConstant.domain}/shopapp/getUserWhereSeller.php';
     await Dio().get(urlAPI).then((value) {
       setState(() {
         load = false;

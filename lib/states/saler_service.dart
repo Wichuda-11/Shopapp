@@ -36,7 +36,7 @@ class _SalerServiceState extends State<SalerService> {
     String id = preferences.getString('id')!;
     print('## id Logined ==> $id');
     String apiGetUserWhereId =
-        '${MyConstant.domain}/shoppingmall/getUserWhereId.php?isAdd=true&id=$id';
+        '${MyConstant.domain}/shopapp/getUserWhereId.php?isAdd=true&id=$id';
     await Dio().get(apiGetUserWhereId).then((value) {
       print('## value ==> $value');
       for (var item in json.decode(value.data)) {

@@ -131,7 +131,7 @@ class _ConfimeAddWalletState extends State<ConfimeAddWallet> {
 
   Future<void> processUploadAndInsertData() async {
     // upload Image to Server
-    String apiSaveSlip = '${MyConstant.domain}/shoppingmall/saveSlip.php';
+    String apiSaveSlip = '${MyConstant.domain}/shopapp/saveSlip.php';
     String nameSlip = 'slip${Random().nextInt(1000000)}.jpg';
 
     MyDialog().showProgressDialog(context);
@@ -149,7 +149,7 @@ class _ConfimeAddWalletState extends State<ConfimeAddWallet> {
         var pathSlip = '/slip/$nameSlip';
         var status = 'WaitOrder';
         var urlAPIinsert =
-            '${MyConstant.domain}/shoppingmall/insertWallet.php?isAdd=true&idBuyer=$idBuyer&datePay=$dateTimeStr&money=${moneyController.text.trim()}&pathSlip=$pathSlip&status=$status';
+            '${MyConstant.domain}/shopapp/insertWallet.php?isAdd=true&idBuyer=$idBuyer&datePay=$dateTimeStr&money=${moneyController.text.trim()}&pathSlip=$pathSlip&status=$status';
         await Dio().get(urlAPIinsert).then(
               (value) => MyDialog(funcAction: success).actionDialog(
                 context,

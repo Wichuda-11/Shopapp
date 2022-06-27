@@ -65,7 +65,7 @@ class _EditProfileSalerState extends State<EditProfileSaler> {
     String user = preferences.getString('user')!;
 
     String apiGetUser =
-        '${MyConstant.domain}/shoppingmall/getUserWhereUser.php?isAdd=true&user=$user';
+        '${MyConstant.domain}/shopapp/getUserWhereUser.php?isAdd=true&user=$user';
     await Dio().get(apiGetUser).then((value) {
       print('value from API ==>> $value');
       for (var item in json.decode(value.data)) {
@@ -129,7 +129,7 @@ class _EditProfileSalerState extends State<EditProfileSaler> {
         editValueToMySQL(userModel!.avatar);
       } else {
         String apiSaveAvatar =
-            '${MyConstant.domain}/shoppingmall/saveAvatar.php';
+            '${MyConstant.domain}/shopapp/saveAvatar.php';
 
         List<String> nameAvatars = userModel!.avatar.split('/');
         String nameFile = nameAvatars[nameAvatars.length - 1];
@@ -143,7 +143,7 @@ class _EditProfileSalerState extends State<EditProfileSaler> {
         FormData formData = FormData.fromMap(map);
         await Dio().post(apiSaveAvatar, data: formData).then((value) {
           print('Upload Succes');
-          String pathAvatar = '/shoppingmall/avatar/$nameFile';
+          String pathAvatar = '/shopapp/avatar/$nameFile';
           editValueToMySQL(pathAvatar);
         });
       }
@@ -153,7 +153,7 @@ class _EditProfileSalerState extends State<EditProfileSaler> {
   Future<Null> editValueToMySQL(String pathAvatar) async {
     print('## pathAvatar ==> $pathAvatar');
     String apiEditProfile =
-        '${MyConstant.domain}/shoppingmall/editProfileSellerWhereId.php?isAdd=true&id=${userModel!.id}&name=${nameController.text}&address=${addressController.text}&phone=${phoneController.text}&avatar=$pathAvatar&lat=${latLng!.latitude}&lng=${latLng!.longitude}';
+        '${MyConstant.domain}/shopapp/editProfileSellerWhereId.php?isAdd=true&id=${userModel!.id}&name=${nameController.text}&address=${addressController.text}&phone=${phoneController.text}&avatar=$pathAvatar&lat=${latLng!.latitude}&lng=${latLng!.longitude}';
     await Dio().get(apiEditProfile).then((value) {
       Navigator.pop(context);
       Navigator.pop(context);

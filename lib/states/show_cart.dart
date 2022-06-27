@@ -64,7 +64,7 @@ class _ShowCartState extends State<ShowCart> {
     String idSeller = sqliteModels[0].idSeller;
     print('### idSeller ==>> $idSeller');
     String apiGetUserWhereId =
-        '${MyConstant.domain}/shoppingmall/getUserWhereId.php?isAdd=true&id=$idSeller';
+        '${MyConstant.domain}/shopapp/getUserWhereId.php?isAdd=true&id=$idSeller';
     await Dio().get(apiGetUserWhereId).then((value) {
       for (var item in json.decode(value.data)) {
         setState(() {
@@ -154,7 +154,7 @@ class _ShowCartState extends State<ShowCart> {
             String idBuyer = preferences.getString('id')!;
 
             var path =
-                '${MyConstant.domain}/shoppingmall/getWalletWhereIdBuyer.php?isAdd=true&idBuyer=$idBuyer';
+                '${MyConstant.domain}/shopapp/getWalletWhereIdBuyer.php?isAdd=true&idBuyer=$idBuyer';
             await Dio().get(path).then((value) {
               Navigator.pop(context);
               print('#### value == $value');

@@ -42,7 +42,7 @@ class ShowListWallet extends StatelessWidget {
                         errorWidget: (context, url, error) =>
                             ShowImage(path: 'images/bill.png'),
                         imageUrl:
-                            '${MyConstant.domain}/shoppingmall${walletModels![index].pathSlip}'),
+                            '${MyConstant.domain}/shopapp${walletModels![index].pathSlip}'),
                   )
                 ],
               ),

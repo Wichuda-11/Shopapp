@@ -43,7 +43,7 @@ class _BuyerServiceState extends State<BuyerService> {
     var idUserLogin = preferences.getString('id');
 
     var urlAPI =
-        '${MyConstant.domain}/shoppingmall/getUserWhereId.php?isAdd=true&id=$idUserLogin';
+        '${MyConstant.domain}/shopapp/getUserWhereId.php?isAdd=true&id=$idUserLogin';
     await Dio().get(urlAPI).then((value) async {
       for (var item in json.decode(value.data)) {
         setState(() {
@@ -53,7 +53,7 @@ class _BuyerServiceState extends State<BuyerService> {
       }
 
       var path =
-          '${MyConstant.domain}/shoppingmall/getWalletWhereIdBuyer.php?isAdd=true&idBuyer=${userModel!.id}';
+          '${MyConstant.domain}/shopapp/getWalletWhereIdBuyer.php?isAdd=true&idBuyer=${userModel!.id}';
       await Dio().get(path).then((value) {
         print('#### value getWalletWhereId ==> $value');
 

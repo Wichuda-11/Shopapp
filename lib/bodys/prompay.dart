@@ -71,13 +71,13 @@ class _PrompayState extends State<Prompay> {
         color: Colors.lime.shade100,
         child: ListTile(
           title: ShowTitle(
-            title: '0818595309',
+            title: '0997027894',
             textStyle: MyConstant().h1Style(),
           ),
           subtitle: ShowTitle(title: 'บัญชี Prompay'),
           trailing: IconButton(
               onPressed: () {
-                Clipboard.setData(ClipboardData(text: '0818595309'));
+                Clipboard.setData(ClipboardData(text: '0997027894'));
                 MyDialog().normalDialog(context, 'Copy Prompay',
                     'Copy Prompay to Clopboard สำเร็จ แล้ว กรุณาไปที่ แอพธนาคารของ ท่าน เพื่อโอนเงิน ผ่าน Prompay ได้เลย คะ');
               },

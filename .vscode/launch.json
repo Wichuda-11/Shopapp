@@ -12,7 +12,7 @@
             "type": "dart",
             // "args": ["--enable-software-rendering"]
             // "flutterMode": "profile", //debug //release 
-            "program": "/lib/main.dart"
+            "program": "lib/main.dart"
         },
         {
             "name": "shopapp (profile mode)",
